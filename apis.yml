@@ -1,15 +1,27 @@
+aid: accessibility-standards
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/apis.yml
 name: Accessibility Standards
-description: Guidelines and technical specifications that ensure digital content,
-  applications, and technologies are usable by people with disabilities, including
-  standards like WCAG, Section 508, and ARIA. It helps organizations meet regulatory
-  requirements and demonstrate accountability to stakeholders.
-url: https://www.w3.org/WAI/standards-guidelines/
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Accessibility
-- Web Standards
-- Compliance
-- UX
-created: '2025'
-modified: '2025'
+  - Accessibility
+  - Web Standards
+  - Compliance
+  - UX
+description: >-
+  Guidelines and technical specifications that ensure digital content,
+  applications, and technologies are usable by people with disabilities,
+  including standards like WCAG, Section 508, and ARIA. These standards help
+  organizations meet regulatory requirements and demonstrate accountability
+  to stakeholders.
+created: '2025-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis: []
-common: []
+common:
+  - type: Website
+    url: https://www.w3.org/WAI/standards-guidelines/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
