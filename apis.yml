@@ -6,9 +6,9 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Accessibility
-  - Web Standards
   - Compliance
   - UX
+  - Web Standards
 description: >-
   Guidelines and technical specifications that ensure digital content,
   applications, and technologies are usable by people with disabilities,
