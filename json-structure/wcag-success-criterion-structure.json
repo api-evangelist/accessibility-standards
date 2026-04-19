@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-structure/wcag-success-criterion-structure.json",
+  "name": "WcagSuccessCriterion",
+  "description": "A WCAG success criterion defining a testable requirement for accessible web content.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The WCAG success criterion identifier, e.g. 1.1.1",
+      "example": "1.1.1",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    },
+    "title": {
+      "description": "Short name of the success criterion",
+      "example": "Non-text Content",
+      "type": "string"
+    },
+    "level": {
+      "description": "Conformance level of the success criterion",
+      "example": "A",
+      "enum": [
+        "A",
+        "AA",
+        "AAA"
+      ],
+      "type": "string"
+    },
+    "principle": {
+      "description": "The POUR principle the criterion belongs to",
+      "example": "Perceivable",
+      "enum": [
+        "Perceivable",
+        "Operable",
+        "Understandable",
+        "Robust"
+      ],
+      "type": "string"
+    },
+    "guideline": {
+      "description": "The guideline number the criterion belongs to",
+      "example": "1.1",
+      "type": "string"
+    },
+    "description": {
+      "description": "Full text of the success criterion requirement",
+      "type": "string"
+    },
+    "url": {
+      "description": "URL to the official WCAG success criterion documentation",
+      "example": "https://www.w3.org/TR/WCAG22/#non-text-content",
+      "type": "uri"
+    },
+    "version": {
+      "description": "WCAG version that introduced this criterion",
+      "example": "2.0",
+      "type": "string"
+    },
+    "understanding": {
+      "description": "URL to the understanding document for this criterion",
+      "type": "uri"
+    },
+    "techniques": {
+      "description": "List of technique identifiers applicable to this criterion",
+      "example": [
+        "G94",
+        "H37",
+        "C9"
+      ],
+      "type": "array",
+      "items": {
+        "$schema": "https://json-structure.org/meta/core/v0/#",
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "level",
+    "principle"
+  ]
+}

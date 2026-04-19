@@ -1,0 +1,16 @@
+{
+  "id": "1.1.1",
+  "title": "Non-text Content",
+  "level": "AAA",
+  "principle": "Robust",
+  "guideline": "1.1",
+  "description": "Meets WCAG 2.2 Level AA requirements.",
+  "url": "https://www.w3.org/TR/WCAG22/#non-text-content",
+  "version": "2.0",
+  "understanding": "https://www.example.com/accessibility",
+  "techniques": [
+    "G94",
+    "H37",
+    "C9"
+  ]
+}

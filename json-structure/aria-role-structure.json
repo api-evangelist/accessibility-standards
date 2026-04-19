@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-structure/aria-role-structure.json",
+  "name": "AriaRole",
+  "description": "A WAI-ARIA role definition that provides semantic meaning to HTML elements for assistive technologies.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The ARIA role name",
+      "example": "button",
+      "type": "string"
+    },
+    "category": {
+      "description": "The role category in the ARIA taxonomy",
+      "example": "Widget",
+      "enum": [
+        "Abstract",
+        "Widget",
+        "Document Structure",
+        "Landmark",
+        "Live Region",
+        "Window"
+      ],
+      "type": "string"
+    },
+    "description": {
+      "description": "Description of the role and its semantic meaning",
+      "type": "string"
+    },
+    "superclassRole": {
+      "description": "Parent roles in the ARIA role hierarchy",
+      "example": [
+        "command",
+        "input"
+      ],
+      "type": "array",
+      "items": {
+        "$schema": "https://json-structure.org/meta/core/v0/#",
+        "type": "string"
+      }
+    },
+    "requiredStates": {
+      "description": "ARIA states required for this role",
+      "example": [
+        "aria-pressed"
+      ],
+      "type": "array",
+      "items": {
+        "$schema": "https://json-structure.org/meta/core/v0/#",
+        "type": "string"
+      }
+    },
+    "supportedProperties": {
+      "description": "ARIA properties supported by this role",
+      "example": [
+        "aria-expanded",
+        "aria-haspopup",
+        "aria-label"
+      ],
+      "type": "array",
+      "items": {
+        "$schema": "https://json-structure.org/meta/core/v0/#",
+        "type": "string"
+      }
+    },
+    "implicitAriaSemantics": {
+      "description": "HTML elements that natively carry this role",
+      "example": "button, input[type=button]",
+      "type": "string"
+    },
+    "specUrl": {
+      "description": "URL to the WAI-ARIA spec definition",
+      "example": "https://www.w3.org/TR/wai-aria-1.2/#button",
+      "type": "uri"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "description"
+  ]
+}

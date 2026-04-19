@@ -1,0 +1,223 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Accessibility Standards
+  description: >-
+    Vocabulary taxonomy for web and ICT accessibility standards including WCAG, WAI-ARIA,
+    ATAG, UAAG, Section 508, and ACT Rules Format. Covers the operational specification
+    landscape and the cross-cutting terminology used across accessibility conformance testing.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: WCAG 2.2
+      namespace: wcag
+      version: "2.2"
+      baseUrl: https://www.w3.org/TR/WCAG22/
+      status: active
+    - name: WAI-ARIA 1.2
+      namespace: aria
+      version: "1.2"
+      baseUrl: https://www.w3.org/TR/wai-aria-1.2/
+      status: active
+    - name: ATAG 2.0
+      namespace: atag
+      version: "2.0"
+      baseUrl: https://www.w3.org/TR/ATAG/
+      status: active
+    - name: UAAG 2.0
+      namespace: uaag
+      version: "2.0"
+      baseUrl: https://www.w3.org/TR/UAAG20/
+      status: active
+    - name: Section 508
+      namespace: section508
+      version: "2017"
+      baseUrl: https://www.access-board.gov/ict/
+      status: active
+    - name: ACT Rules Format 1.1
+      namespace: act
+      version: "1.1"
+      baseUrl: https://www.w3.org/TR/act-rules-format/
+      status: active
+
+  resources:
+    - name: Success Criterion
+      description: A testable statement about accessible content from WCAG
+      api: wcag
+      actions: [evaluate, list, reference]
+    - name: Guideline
+      description: A grouping of success criteria under a WCAG principle
+      api: wcag
+      actions: [list, reference]
+    - name: Conformance Report
+      description: Documentation of an accessibility evaluation against WCAG criteria
+      api: wcag
+      actions: [create, read, update, list]
+    - name: ARIA Role
+      description: A WAI-ARIA semantic role applicable to HTML elements
+      api: aria
+      actions: [list, reference, validate]
+    - name: ARIA Property
+      description: An aria-* attribute that provides additional semantics
+      api: aria
+      actions: [list, reference]
+    - name: ACT Rule
+      description: A standardized accessibility conformance testing rule
+      api: act
+      actions: [list, reference, apply]
+    - name: Violation
+      description: An identified accessibility failure in an evaluation subject
+      api: wcag
+      actions: [report, remediate, list]
+
+  actions:
+    - verb: evaluate
+      description: Assess content against accessibility criteria
+      pattern: read
+    - verb: validate
+      description: Check conformance of markup or structure
+      pattern: read
+    - verb: list
+      description: Enumerate criteria, rules, roles, or violations
+      pattern: read
+    - verb: report
+      description: Document findings from an accessibility evaluation
+      pattern: write
+    - verb: remediate
+      description: Fix identified accessibility violations
+      pattern: write
+    - verb: reference
+      description: Look up a specific standard or criterion by identifier
+      pattern: read
+
+  schemas:
+    core:
+      - WcagSuccessCriterion
+      - WcagConformanceReport
+      - AriaRole
+    testing:
+      - Violation
+      - ActRule
+
+  parameters:
+    identifiers:
+      - name: criterionId
+        description: WCAG success criterion identifier (e.g. 1.1.1)
+      - name: ruleId
+        description: ACT rule identifier
+      - name: roleName
+        description: WAI-ARIA role name
+    filters:
+      - name: level
+        description: Conformance level filter (A, AA, AAA)
+      - name: principle
+        description: POUR principle filter
+      - name: standard
+        description: Which standard to reference
+
+  enums:
+    levels:
+      - A
+      - AA
+      - AAA
+    principles:
+      - Perceivable
+      - Operable
+      - Understandable
+      - Robust
+    violationSeverities:
+      - critical
+      - serious
+      - moderate
+      - minor
+    conformanceStatus:
+      - Passes
+      - Fails
+      - Partial
+      - Not Evaluated
+    ariaCategories:
+      - Abstract
+      - Widget
+      - Document Structure
+      - Landmark
+      - Live Region
+      - Window
+
+  authentication:
+    schemes: []
+    notes: Accessibility standards are public specifications — no authentication required
+
+capability:
+  workflows:
+    - name: Accessibility Conformance Audit
+      description: Systematic evaluation of a website or application against WCAG 2.2 Level AA
+      standards: [WCAG 2.2, Section 508]
+      personas: [Accessibility Auditor, Developer, Legal Compliance Officer]
+    - name: ARIA Implementation Review
+      description: Reviewing dynamic UI components for proper WAI-ARIA role and property usage
+      standards: [WAI-ARIA 1.2, WCAG 2.2]
+      personas: [Front-End Developer, QA Engineer]
+    - name: Automated CI Accessibility Testing
+      description: Running ACT-compatible rules in CI/CD pipelines using tools like axe-core or Pa11y
+      standards: [ACT Rules Format 1.1, WCAG 2.2]
+      personas: [DevOps Engineer, Developer]
+    - name: VPAT / ACR Generation
+      description: Producing Voluntary Product Accessibility Templates documenting Section 508 and WCAG conformance
+      standards: [Section 508, WCAG 2.2]
+      personas: [Legal Compliance Officer, Procurement Officer]
+
+  personas:
+    - id: accessibility-auditor
+      name: Accessibility Auditor
+      description: Specialist who evaluates digital products against WCAG and regulatory standards
+      workflows: [Accessibility Conformance Audit]
+    - id: developer
+      name: Developer
+      description: Engineer implementing accessible UI components using ARIA and WCAG guidance
+      workflows: [ARIA Implementation Review, Automated CI Accessibility Testing]
+    - id: qa-engineer
+      name: QA Engineer
+      description: Tester validating accessibility conformance in development pipelines
+      workflows: [ARIA Implementation Review, Automated CI Accessibility Testing]
+    - id: compliance-officer
+      name: Legal Compliance Officer
+      description: Oversees regulatory compliance with Section 508, ADA, and EU Accessibility Act
+      workflows: [Accessibility Conformance Audit, VPAT / ACR Generation]
+    - id: procurement-officer
+      name: Procurement Officer
+      description: Reviews vendor VPATs during ICT procurement for federal agencies
+      workflows: [VPAT / ACR Generation]
+
+  domains:
+    - name: Web Accessibility
+      description: Standards for accessible web content and applications
+      standards: [WCAG 2.2, WAI-ARIA 1.2]
+    - name: ICT Accessibility
+      description: Broader technology accessibility including hardware and software
+      standards: [Section 508, UAAG 2.0]
+    - name: Authoring Accessibility
+      description: Making content creation tools accessible
+      standards: [ATAG 2.0]
+    - name: Conformance Testing
+      description: Frameworks for consistent, automated accessibility testing
+      standards: [ACT Rules Format 1.1]
+
+crossReference:
+  - resource: Success Criterion
+    operations: [evaluate, reference, list]
+    standards: [WCAG 2.2, Section 508]
+    personas: [Accessibility Auditor, Developer, Legal Compliance Officer]
+  - resource: ARIA Role
+    operations: [validate, reference, list]
+    standards: [WAI-ARIA 1.2, WCAG 2.2]
+    personas: [Developer, QA Engineer]
+  - resource: ACT Rule
+    operations: [apply, list, reference]
+    standards: [ACT Rules Format 1.1]
+    personas: [Developer, QA Engineer, DevOps Engineer]
+  - resource: Conformance Report
+    operations: [create, read, list]
+    standards: [WCAG 2.2, Section 508]
+    personas: [Accessibility Auditor, Legal Compliance Officer, Procurement Officer]

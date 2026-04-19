@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-schema/wcag-success-criterion-schema.json",
+  "title": "WcagSuccessCriterion",
+  "description": "A WCAG success criterion defining a testable requirement for accessible web content.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The WCAG success criterion identifier, e.g. 1.1.1",
+      "example": "1.1.1",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short name of the success criterion",
+      "example": "Non-text Content"
+    },
+    "level": {
+      "type": "string",
+      "description": "Conformance level of the success criterion",
+      "enum": ["A", "AA", "AAA"],
+      "example": "A"
+    },
+    "principle": {
+      "type": "string",
+      "description": "The POUR principle the criterion belongs to",
+      "enum": ["Perceivable", "Operable", "Understandable", "Robust"],
+      "example": "Perceivable"
+    },
+    "guideline": {
+      "type": "string",
+      "description": "The guideline number the criterion belongs to",
+      "example": "1.1"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full text of the success criterion requirement"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the official WCAG success criterion documentation",
+      "example": "https://www.w3.org/TR/WCAG22/#non-text-content"
+    },
+    "version": {
+      "type": "string",
+      "description": "WCAG version that introduced this criterion",
+      "example": "2.0"
+    },
+    "understanding": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the understanding document for this criterion"
+    },
+    "techniques": {
+      "type": "array",
+      "description": "List of technique identifiers applicable to this criterion",
+      "items": {
+        "type": "string"
+      },
+      "example": ["G94", "H37", "C9"]
+    }
+  },
+  "required": ["id", "title", "level", "principle"]
+}

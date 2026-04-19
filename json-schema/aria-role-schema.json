@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-schema/aria-role-schema.json",
+  "title": "AriaRole",
+  "description": "A WAI-ARIA role definition that provides semantic meaning to HTML elements for assistive technologies.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The ARIA role name",
+      "example": "button"
+    },
+    "category": {
+      "type": "string",
+      "description": "The role category in the ARIA taxonomy",
+      "enum": ["Abstract", "Widget", "Document Structure", "Landmark", "Live Region", "Window"],
+      "example": "Widget"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the role and its semantic meaning"
+    },
+    "superclassRole": {
+      "type": "array",
+      "description": "Parent roles in the ARIA role hierarchy",
+      "items": {
+        "type": "string"
+      },
+      "example": ["command", "input"]
+    },
+    "requiredStates": {
+      "type": "array",
+      "description": "ARIA states required for this role",
+      "items": {
+        "type": "string"
+      },
+      "example": ["aria-pressed"]
+    },
+    "supportedProperties": {
+      "type": "array",
+      "description": "ARIA properties supported by this role",
+      "items": {
+        "type": "string"
+      },
+      "example": ["aria-expanded", "aria-haspopup", "aria-label"]
+    },
+    "implicitAriaSemantics": {
+      "type": "string",
+      "description": "HTML elements that natively carry this role",
+      "example": "button, input[type=button]"
+    },
+    "specUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the WAI-ARIA spec definition",
+      "example": "https://www.w3.org/TR/wai-aria-1.2/#button"
+    }
+  },
+  "required": ["name", "category", "description"]
+}

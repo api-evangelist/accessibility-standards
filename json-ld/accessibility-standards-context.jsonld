@@ -1,0 +1,117 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "a11y": "https://www.w3.org/WAI/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AriaRole": "a11y:AriaRole",
+    "WcagConformanceReport": "a11y:WcagConformanceReport",
+    "WcagSuccessCriterion": "a11y:WcagSuccessCriterion",
+    "category": {
+      "@id": "a11y:category",
+      "@type": "xsd:string"
+    },
+    "conformanceLevel": {
+      "@id": "a11y:conformanceLevel",
+      "@type": "xsd:string"
+    },
+    "criterionId": {
+      "@id": "a11y:criterionId",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "element": {
+      "@id": "a11y:element",
+      "@type": "xsd:string"
+    },
+    "evaluationDate": {
+      "@id": "a11y:evaluationDate",
+      "@type": "xsd:date"
+    },
+    "evaluator": {
+      "@id": "a11y:evaluator",
+      "@type": "xsd:string"
+    },
+    "guideline": {
+      "@id": "a11y:guideline",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "a11y:id",
+      "@type": "xsd:string"
+    },
+    "implicitAriaSemantics": {
+      "@id": "a11y:implicitAriaSemantics",
+      "@type": "xsd:string"
+    },
+    "level": {
+      "@id": "a11y:level",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "principle": {
+      "@id": "a11y:principle",
+      "@type": "xsd:string"
+    },
+    "remediation": {
+      "@id": "a11y:remediation",
+      "@type": "xsd:string"
+    },
+    "requiredStates": {
+      "@id": "a11y:requiredStates",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "severity": {
+      "@id": "a11y:severity",
+      "@type": "xsd:string"
+    },
+    "specUrl": {
+      "@id": "a11y:specUrl",
+      "@type": "@id"
+    },
+    "standard": {
+      "@id": "a11y:standard",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "a11y:status",
+      "@type": "xsd:string"
+    },
+    "subject": {
+      "@id": "a11y:subject",
+      "@type": "@id"
+    },
+    "superclassRole": {
+      "@id": "a11y:superclassRole",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "supportedProperties": {
+      "@id": "a11y:supportedProperties",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "techniques": {
+      "@id": "a11y:techniques",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "a11y:title",
+      "@type": "xsd:string"
+    },
+    "understanding": {
+      "@id": "a11y:understanding",
+      "@type": "@id"
+    },
+    "url": "schema:url",
+    "version": "schema:version",
+    "violations": {
+      "@id": "a11y:violations",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

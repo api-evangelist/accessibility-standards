@@ -1,0 +1,16 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "subject": {
+    "name": "Example Web Application",
+    "url": "https://www.example.com"
+  },
+  "standard": "WCAG 2.0",
+  "conformanceLevel": "A",
+  "status": "Passes",
+  "evaluationDate": "2026-04-19",
+  "evaluator": "Accessibility Consulting Group",
+  "violations": [
+    "example-value",
+    "example-value"
+  ]
+}

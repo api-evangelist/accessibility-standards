@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-schema/wcag-conformance-report-schema.json",
+  "title": "WcagConformanceReport",
+  "description": "An accessibility conformance report documenting the evaluation of a website or application against WCAG criteria.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this conformance report",
+      "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    "subject": {
+      "type": "object",
+      "description": "The website or application being evaluated",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the evaluated site or application",
+          "example": "Example Web Application"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the evaluated site",
+          "example": "https://www.example.com"
+        }
+      },
+      "required": ["name", "url"]
+    },
+    "standard": {
+      "type": "string",
+      "description": "The WCAG version evaluated against",
+      "enum": ["WCAG 2.0", "WCAG 2.1", "WCAG 2.2", "WCAG 3.0"],
+      "example": "WCAG 2.2"
+    },
+    "conformanceLevel": {
+      "type": "string",
+      "description": "The claimed conformance level",
+      "enum": ["A", "AA", "AAA"],
+      "example": "AA"
+    },
+    "status": {
+      "type": "string",
+      "description": "Overall conformance status",
+      "enum": ["Passes", "Fails", "Partial", "Not Evaluated"],
+      "example": "Partial"
+    },
+    "evaluationDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the evaluation was conducted",
+      "example": "2026-04-19"
+    },
+    "evaluator": {
+      "type": "string",
+      "description": "Name or organization that performed the evaluation",
+      "example": "Accessibility Consulting Group"
+    },
+    "violations": {
+      "type": "array",
+      "description": "List of accessibility violations found",
+      "items": {
+        "$ref": "#/$defs/Violation"
+      }
+    }
+  },
+  "required": ["subject", "standard", "conformanceLevel", "evaluationDate"],
+  "$defs": {
+    "Violation": {
+      "type": "object",
+      "description": "A single accessibility violation found during evaluation",
+      "properties": {
+        "criterionId": {
+          "type": "string",
+          "description": "WCAG success criterion identifier",
+          "example": "1.4.3"
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "serious", "moderate", "minor"],
+          "example": "serious"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the violation",
+          "example": "Text contrast ratio of 2.5:1 does not meet minimum 4.5:1 requirement"
+        },
+        "element": {
+          "type": "string",
+          "description": "CSS selector or XPath of the offending element",
+          "example": ".nav-link"
+        },
+        "remediation": {
+          "type": "string",
+          "description": "Recommended fix for the violation"
+        }
+      },
+      "required": ["criterionId", "severity", "description"]
+    }
+  }
+}

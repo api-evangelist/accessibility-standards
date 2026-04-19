@@ -1,0 +1,19 @@
+{
+  "name": "button",
+  "category": "Abstract",
+  "description": "Meets WCAG 2.2 Level AA requirements.",
+  "superclassRole": [
+    "command",
+    "input"
+  ],
+  "requiredStates": [
+    "aria-pressed"
+  ],
+  "supportedProperties": [
+    "aria-expanded",
+    "aria-haspopup",
+    "aria-label"
+  ],
+  "implicitAriaSemantics": "button, input[type=button]",
+  "specUrl": "https://www.w3.org/TR/wai-aria-1.2/#button"
+}
