@@ -200,7 +200,7 @@ common:
   - type: Tools
     url: https://github.com/pa11y/pa11y
     title: Pa11y Automated Accessibility Testing
-  - type: JSON-LD
+  - type: JSONLD
     url: >-
       https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-ld/accessibility-standards-context.jsonld
     title: Accessibility Standards JSON-LD Context
