@@ -65,11 +65,11 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-structure/wcag-conformance-report-structure.json
         title: WCAG Conformance Report Structure
-      - type: Example
+      - type: Examples
         url: >-
           https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/examples/wcag-success-criterion-example.json
         title: WCAG Success Criterion Example
-      - type: Example
+      - type: Examples
         url: >-
           https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/examples/wcag-conformance-report-example.json
         title: WCAG Conformance Report Example
@@ -103,7 +103,7 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/json-structure/aria-role-structure.json
         title: ARIA Role Structure
-      - type: Example
+      - type: Examples
         url: >-
           https://raw.githubusercontent.com/api-evangelist/accessibility-standards/refs/heads/main/examples/aria-role-example.json
         title: ARIA Role Example
