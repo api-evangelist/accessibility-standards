@@ -186,6 +186,8 @@ apis:
         url: https://github.com/w3c/wcag-act-rules
         title: WCAG ACT Rules Repository
 common:
+  - type: DomainSecurity
+    url: security/accessibility-standards-domain-security.yml
   - type: Website
     url: https://www.w3.org/WAI/standards-guidelines/
   - type: GitHubOrganization
