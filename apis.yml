@@ -199,6 +199,12 @@ apis:
         url: https://github.com/w3c/wcag-act-rules
         title: WCAG ACT Rules Repository
 common:
+  - type: IssueTracker
+    url: https://github.com/w3c/wcag/issues
+  - type: CodeOfConduct
+    url: https://github.com/w3c/wcag/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/w3c/wcag/blob/main/CONTRIBUTING.md
   - type: DomainSecurity
     url: security/accessibility-standards-domain-security.yml
   - type: Website
