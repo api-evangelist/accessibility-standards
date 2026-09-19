@@ -158,6 +158,11 @@ apis:
     baseURL: https://www.w3.org/TR/UAAG20/
     tags:
       - UAAG
+      - Browser
+      - User Agents
+      - W3C
+    tags_raw:
+      - UAAG
       - Browsers
       - User Agents
       - W3C
