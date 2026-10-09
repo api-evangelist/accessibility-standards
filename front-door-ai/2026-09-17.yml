@@ -10,16 +10,21 @@ front_door_ai:
   ownership: unresolved
   owner: null
   shares_host_with:
+  - css
   - soa
   - soap
   - technology-standards
   - wcag
+  - web-standards
   - wsdl
   - xml
   - xslt
   inherited_from: null
+  alias_of: null
   verdict: scored
   score: null
+  band: null
+  band_label: null
   host_score: 2
   density: null
   words: 865
